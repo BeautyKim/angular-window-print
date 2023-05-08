@@ -1,0 +1,27 @@
+:host {
+  font-family: Lato;
+}
+
+.row-example {
+  border: 1px solid #000;
+  height: 200px;
+  
+  div {
+    background: #f5f5f5;
+    border: 1px solid #000;
+    padding: 50px;
+    margin: 0 16px;
+  }
+}
+
+.column-example {
+  border: 1px solid #000;
+  padding: 16px;
+  
+  div {
+    background: #f5f5f5;
+    border: 1px solid #000;
+    padding: 50px;
+    margin: 16px 0;
+  }
+}
