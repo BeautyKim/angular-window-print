@@ -1,7 +1,4 @@
-import {
-  Component,
-  HostListener,
-} from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'my-app',
@@ -30,5 +27,11 @@ export class AppComponent {
     console.log('인쇄 후');
     document.body.innerHTML = this.initBody;
     window.location.reload();
+  }
+
+  popup(): void {
+    this.prtContent = document.getElementById('popup');
+    const popupPrint = window.open();
+    window.print();
   }
 }
