@@ -19,7 +19,7 @@ export class AppComponent {
   public printMe2(): void {
     const option = 'width=600, height=300, scrollbars=no, resizable=0';
     const popupPrintContent = document.getElementById('print2').innerHTML;
-    const popupPrint = window.open('', '팝업 프린트 창', option);
+    const popupPrint = window.open('', '팝업 프린트 화면', option); //_blank is default
     popupPrint.document.write(`
       <html>
         <head>
