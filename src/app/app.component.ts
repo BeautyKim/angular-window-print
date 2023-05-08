@@ -17,20 +17,21 @@ export class AppComponent {
   }
   // 새로고침 필요x
   public printMe2(): void {
-    const option = '';
+    const option = 'width=600, height=300, scrollbars=no, resizable=0';
     const popupPrintContent = document.getElementById('print2').innerHTML;
-    const popupPrint = window.open('', '_blank', 'width=722,height=480');
+    const popupPrint = window.open('', '팝업 프린트 창', option);
     popupPrint.document.write(`
       <html>
         <head>
-          <title>popup print</title>
+          <title>팝업 프린트 화면</title>
         </head>
         <body onload="window.print();">
           ${popupPrintContent}
         </body>
       </html>
     `);
-    popupPrint.document.close();
+    popupPrint.document.close(); // 더 이상 document.write() 못하게 막아주는 코드
+    popupPrint.close(); // 새 창 닫기
   }
 
   @HostListener('window:beforeprint', ['$event'])
