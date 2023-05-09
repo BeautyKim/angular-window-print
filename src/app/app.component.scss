@@ -1,6 +1,6 @@
 @media print {
+  // #print2, 
   #print1, 
-  #print2, 
   button {
     display: none;
   }
@@ -32,4 +32,8 @@
 .printButton {
   display: flex;
   justify-content: space-around;
+}
+
+.print2-content-outer {
+  height: 100vh;
 }
