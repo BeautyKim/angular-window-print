@@ -22,3 +22,14 @@
   size: 210mm 297mm; /*A4*/
   margin: 0mm
 }
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.printButton {
+  display: flex;
+  justify-content: space-around;
+}
