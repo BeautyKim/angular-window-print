@@ -1,0 +1,24 @@
+@media print {
+  #print1, 
+  #print2, 
+  button {
+    display: none;
+  }
+  #print-content-outer { /* 보고서 다운로드 페이지 완성 시 수정된 div id로 수정*/
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    -webkit-print-color-adjust: exact !important;   /* Chrome, Safari, Edge */
+    color-adjust: exact !important; /*Firefox*/
+
+    #print-content-inner {
+      margin: auto;
+    }
+  }
+}
+
+@page {
+  size: 210mm 297mm; /*A4*/
+  margin: 0mm
+}

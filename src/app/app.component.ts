@@ -10,14 +10,14 @@ export class AppComponent {
   public initBody;
 
   constructor() {}
-  // 새로고침 필요
+  // 기본 프린트(새로고침 필요)
   public printMe1(): void {
     this.printContent = document.getElementById('print1');
     window.print();
   }
-  // 새로고침 필요x
+  // 새 창 프린트(새로고침 필요x)
   public printMe2(): void {
-    const option = 'width=600, height=300, scrollbars=no, resizable=0';
+    const option = 'width=800, height=500';
     const popupPrintContent = document.getElementById('print2').innerHTML;
     const popupPrint = window.open('', '팝업 프린트 화면', option); //_blank is default
     popupPrint.document.write(`
@@ -32,6 +32,10 @@ export class AppComponent {
     `);
     popupPrint.document.close(); // 더 이상 document.write() 못하게 막아주는 코드
     popupPrint.close(); // 새 창 닫기
+  }
+  //css 프린트(이 코드에서는 HostListener 때문에 인쇄 후 자동으로 reload 적용됨. css 확인을 위해서 HostListener 주석 필요)
+  public printMe3(): void {
+    window.print();
   }
 
   @HostListener('window:beforeprint', ['$event'])
