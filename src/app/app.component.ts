@@ -16,8 +16,21 @@ export class AppComponent {
     window.print();
   }
   // 새 창 프린트(새로고침 필요x)
-  public printMe2(): void {
-    const option = 'width=800, height=500';
+  public printMe2() {
+    //팝업 사이즈
+    const popupWidth = 900;
+    const popupHeight = 700;
+    // 현재 창 사이즈
+    const winWidth = document.body.clientWidth;
+    const winHeight = document.body.clientHeight;
+    const winX = window.screenX || window.screenLeft; // screenX, screenY -> Firefox
+    const winY = window.screenY || window.screenTop;
+    // console.log(w, h)
+
+    const w = winX + (winWidth - popupWidth) / 2 - 50; // left
+    const h = winY + (winHeight - popupHeight) / 2 - 50; // top
+
+    const option = `width=${popupWidth}, height=${popupHeight},left=${w}, top=${h}, status=no, menubar=no`;
     const popupPrintContent = document.getElementById('print2').innerHTML;
     const popupPrint = window.open('', '팝업 프린트 화면', option); //_blank is default
     popupPrint.document.write(`

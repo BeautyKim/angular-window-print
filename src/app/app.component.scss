@@ -4,7 +4,7 @@
   button {
     display: none;
   }
-  #print-content-outer { /* 보고서 다운로드 페이지 완성 시 수정된 div id로 수정*/
+  body, #print-content-outer { /* 보고서 다운로드 페이지 완성 시 수정된 div id로 수정*/
     position: absolute;
     left: 0;
     top: 0;
